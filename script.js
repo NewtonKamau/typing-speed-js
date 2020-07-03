@@ -32,14 +32,14 @@ function spellCheck() {
     let textEntered = testArea.value;
     let originTextMatch = originText.substring(0, textEntered);
     if (textEntered == originText) {
-        testWrapper.style.color = "#429890";
+        testWrapper.style.borderColor = "#429890";
 
     } else {
         if (textEntered == originTextMatch) {
-            testWrapper.style.color = "#65ccf3";
+            testWrapper.style.borderColor = "#65ccf3";
 
         } else {
-            testWrapper.style.color = "#E95D0F";
+            testWrapper.style.borderColor = "#E95D0F";
         }
     }
 }
