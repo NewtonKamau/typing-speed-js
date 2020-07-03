@@ -9,7 +9,7 @@ const theTimer = document.querySelector(".timer");
 var timer = [0, 0, 0, 0];
 
 // Add leading zero to numbers 9 or below (purely for aesthetics):
-function leadinZero(time) {
+function leadingZero(time) {
     if (time <= 9) {
         time = "0" + time;
     }
@@ -17,7 +17,7 @@ function leadinZero(time) {
 }
 // Run a standard minute/second/hundredths timer:
 function runTimer() {
-  let currentTime = leadingZero(timer[0]) + ":" + leadinZero( timer[1]) + ":" + leadinZero( timer[2]);
+  let currentTime = leadingZero(timer[0]) + ":" + leadingZero( timer[1]) + ":" +leadingZero( timer[2]);
   theTimer.innerHTML = currentTime;
   timer[3]++;
 
@@ -29,8 +29,19 @@ function runTimer() {
 
 // Match the text entered with the provided text on the page:
 function spellCheck() {
-  let textEntered = testArea.value;
-  console.log(textEntered);
+    let textEntered = testArea.value;
+    let originTextMatch = originText.substring(0, textEntered);
+    if (textEntered == originText) {
+        testWrapper.style.color = "#429890";
+
+    } else {
+        if (textEntered == originTextMatch) {
+            testWrapper.style.color = "#65ccf3";
+
+        } else {
+            testWrapper.style.color = "#E95D0F";
+        }
+    }
 }
 
 // Start the timer:
