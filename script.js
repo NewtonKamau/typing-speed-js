@@ -8,6 +8,7 @@ const theTimer = document.querySelector(".timer");
 
 var timer = [0, 0, 0, 0];
 var interval;
+var timerRunning = false;
 
 // Add leading zero to numbers 9 or below (purely for aesthetics):
 function leadingZero(time) {
@@ -34,7 +35,9 @@ function spellCheck() {
 
     let originTextMatch = originText.substring(0, textEntered);
     //checks if the entered text is same as the original text
-    if (textEntered == originText) {
+    if (textEntered == originText && !timerRunning) {
+        //start the timer 
+        timerRunning = true;
         //stops the timer once the condition is true
         clearInterval(interval);
         testWrapper.style.borderColor = "#429890";
