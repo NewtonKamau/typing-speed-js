@@ -27,8 +27,12 @@ function start() {
 }
 
 // Reset everything:
-
+function reset() {
+    console.log("the reset button has been clicked ");
+    
+}
 
 // Event listeners for keyboard input and the reset button:
 testArea.addEventListener("keypress", start, false);
 testArea.addEventListener("keyup", spellCheck, false);
+testArea.addEventListener("click", reset, false);
