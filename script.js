@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 const testWrapper = document.querySelector(".test-wrapper");
 const testArea = document.querySelector("#test-area");
 const originText = document.querySelector("#origin-text p").innerHTML;
@@ -12,12 +14,21 @@ const theTimer = document.querySelector(".timer");
 
 
 // Match the text entered with the provided text on the page:
-
+function spellCheck() {
+    let textEntered = testArea.value;
+    console.log(textEntered);
+}
 
 // Start the timer:
-
+function start() {
+    let textEnteredLength = testArea.value.length;
+    console.log(textEnteredLength);
+    
+}
 
 // Reset everything:
 
 
 // Event listeners for keyboard input and the reset button:
+testArea.addEventListener("keypress", start, false);
+testArea.addEventListener("keyup", spellCheck, false);
